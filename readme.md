@@ -1,46 +1,103 @@
+<h1>
+    Epreseller
+</h1>
 
+## About Epreseller
 
-## About Laravel
+​    <img src="https://img.shields.io/badge/Epreseller-v1.0--beta-blue.svg">
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+- Epreseller是一款Easypanel分销管理系统程序
+- Epreseller是免费的
+- Epreseller看心情不定时更新
+- 基于Laravel5.5开发
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+- 服务器管理
+- 产品管理
+- 服务管理
+- 用户组管理
+- 用户管理
+- API支持，便于编写插件
 
-## Learning Laravel
+## Requirements
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+- PHP 7.1.18+
+- MySQL 5.6.40+
+- Composer
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## Installation
 
-## Laravel Sponsors
+1. 将项目克隆到你的网站根目录
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+   ```shell
+   git clone https://github.com/143kk/Epreseller.git
+   ```
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
+2. 进入你的网站根目录，输入以下命令
 
-## Contributing
+   ```
+   composer install
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+3. 创建配置文件`.env`
 
-## Security Vulnerabilities
+   ```
+   cp .env.example .env
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+   修改`.env`中的下列配置,其他不作改动
 
-## License
+   ```
+   DB_HOST=127.0.0.1 #数据库地址
+   DB_PORT=3306 #数据库端口
+   DB_DATABASE=homestead #数据库名
+   DB_USERNAME=homestead #数据库用户名
+   DB_PASSWORD=secret #数据库用户密码
+   
+   MAIL_DRIVER=smtp #邮箱协议，一般不用修改
+   MAIL_HOST=smtp.mailtrap.io #邮箱服务器
+   MAIL_PORT=2525 #端口
+   MAIL_USERNAME=null #用户名
+   MAIL_PASSWORD=null #邮箱授权码/密码
+   MAIL_ENCRYPTION=null #加密方式，默认(null)为tls
+   
+   APP_NAME=Epreseller
+   APP_ENV=production
+   APP_DEBUG=false
+   APP_URL=http://localhost #网站地址
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+4. 修改目录权限
+
+   ```
+   chmod -R 755 storage/
+   ```
+
+5. 运行数据库迁移和填充数据
+
+   ```
+   php artisan migrate
+   php artisan db:seed
+   ```
+
+6. 后台运行队列服务
+
+   ```
+   screen php artisan queue:work --queue=default
+   ```
+
+7. 使用laravel的伪静态规则
+
+8. 注册管理员账户
+
+   管理员账户ID为1，进入网站首页，注册成为第一个用户，该用户即为管理员
+
+ ## Contributing
+
+没写好
+
+## Links
+
+[星空云](https://www.6zhen.cn/)
+
